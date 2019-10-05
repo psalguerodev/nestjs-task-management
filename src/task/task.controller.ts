@@ -1,16 +1,18 @@
-import { Controller, Get, Param, ParseIntPipe, Body, Post, UsePipes,
-         ValidationPipe, Delete, Patch, Query, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query, UseGuards, UsePipes, ValidationPipe } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { TaskService } from './task.service';
-import { Task } from './task.entity';
+import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
+import { GetUser } from '../auth/get-user.decorator';
+import { User } from '../auth/user.entity';
 import { CreateTaskDto } from './dto/create-task.dto';
+import { GetTaskFilterDto } from './dto/get-task-filter.dto';
 import { TaskStatusValidationPipe } from './pipes/task-status-validation.pipe';
 import { TaskStatus } from './task-status.enum';
-import { GetTaskFilterDto } from './dto/get-task-filter.dto';
-import { User } from '../auth/user.entity';
-import { GetUser } from '../auth/get-user.decorator';
+import { Task } from './task.entity';
+import { TaskService } from './task.service';
 
 @Controller('task')
+@ApiUseTags('task')
+@ApiBearerAuth()
 @UseGuards(AuthGuard())
 export class TaskController {
 
