@@ -12,6 +12,8 @@
     "member-ordering": [false],
     "interface-name": [false],
     "arrow-parens": false,
+    "no-empty": true,
+    "no-trailing-whitespace": true,
     "object-literal-sort-keys": false
   },
   "rulesDirectory": []

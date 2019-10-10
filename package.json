@@ -13,8 +13,8 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "NODE_ENV=production node dist/main",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "NODE_ENV=development jest",
+    "test:watch": "NODE_ENV=development jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
@@ -39,13 +39,13 @@
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
     "swagger-ui-express": "^4.1.1",
-    "typeorm": "^0.2.19",
+    "typeorm": "^0.2.19"
+  },
+  "devDependencies": {
     "@types/express": "^4.17.1",
     "@types/node": "^12.7.5",
     "ts-node": "^8.4.1",
-    "typescript": "^3.6.3"
-  },
-  "devDependencies": {
+    "typescript": "^3.6.3",
     "@nestjs/cli": "^6.9.0",
     "@nestjs/schematics": "^6.7.0",
     "@nestjs/testing": "^6.7.1",
@@ -57,7 +57,7 @@
     "ts-jest": "^24.1.0",
     "ts-loader": "^6.1.1",
     "tsconfig-paths": "^3.9.0",
-    "tslint": "^5.20.0",
+    "tslint": "^5.20.0"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -70,7 +70,7 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "coverageDirectory": "./coverage",
+    "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
 }
