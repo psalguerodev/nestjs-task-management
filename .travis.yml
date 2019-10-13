@@ -18,13 +18,14 @@ install:
   - yarn install
 script:
   - yarn test
-
-before_deploy:
-  - apt-get install sshpass
-deploy:
   - echo $PASSWORD_SSH
   - echo $TRAVIS_COMMIT
   - echo $TRAVIS_TAG
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_BUILD_NUMBER
   - echo $TRAVIS_REPO_SLUG
+
+before_deploy:
+  - apt-get install sshpass
+
+
