@@ -28,4 +28,11 @@ script:
 before_deploy:
   - apt-get install sshpass
 
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: echo hiiii!
+    on:
+      branch: master
+
 
