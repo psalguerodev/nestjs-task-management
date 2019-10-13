@@ -1,6 +1,14 @@
 language: node_js
 node_js:
   - 10
+branches:
+  only:
+    - master
+    - develop
+    - /^release-.*$/
+cache:
+  directories:
+    - "node_modules"
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.19.0
   - export PATH="$HOME/.yarn/bin:$PATH"
@@ -10,3 +18,13 @@ install:
   - yarn install
 script:
   - yarn test
+
+before_deploy:
+  - apt-get install sshpass
+deploy:
+  - echo $PASSWORD_SSH
+  - echo $TRAVIS_COMMIT
+  - echo $TRAVIS_TAG
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_BUILD_NUMBER
+  - echo $TRAVIS_REPO_SLUG
