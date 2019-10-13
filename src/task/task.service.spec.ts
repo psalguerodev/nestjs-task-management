@@ -17,7 +17,7 @@ const mockTaskRepository = () => ({
   save: jest.fn(),
 });
 
-describe('TaskService', () => {
+describe('TaskServiceTest', () => {
   let taskService: TaskService;
   let taskRepository;
 
@@ -102,7 +102,6 @@ describe('TaskService', () => {
 
   describe('updateStatusTask', () => {
     it('call taskservice.getTaskByID() and successfully update status task by ID', async () => {
-
       taskService.getTaskByID = jest.fn().mockReturnValue({
         status: TaskStatus.OPEN,
         id: 123,

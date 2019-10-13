@@ -7,11 +7,11 @@ import * as bcrypt from 'bcryptjs';
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
 
-  private readonly DUPLICATE_CODE = '23505';
+  private readonly DUPLICATE_ERROR_CODE = '23505';
 
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
     const { username, password } = authCredentialsDto;
-    const user = new User();
+    const user = this.create();
     const salt = await bcrypt.genSalt();
 
     user.username = username;
@@ -21,7 +21,7 @@ export class UserRepository extends Repository<User> {
     try {
       await user.save();
     } catch (error) {
-      if (error.code === this.DUPLICATE_CODE) {
+      if (error.code === this.DUPLICATE_ERROR_CODE) {
         throw new ConflictException(`username already exists`);
       } else {
         throw new InternalServerErrorException(error);
@@ -33,7 +33,7 @@ export class UserRepository extends Repository<User> {
     const { username, password } = authCrendtialsDto;
     const user = await this.findOne({ username });
 
-    if (user && await user.validateHash(password)) {
+    if (user && await user.validatePassword(password)) {
       return user.username;
     } else {
       return null;
