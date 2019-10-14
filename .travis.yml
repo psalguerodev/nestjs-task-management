@@ -1,20 +1,33 @@
 language: node_js
 node_js:
-  - 10
+- '10'
+services:
+  - docker
 branches:
   only:
-    - master
-    - develop
-    - /^release-.*$/
+  - master
+  - develop
+  - "/^release-.*$/"
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.19.0
-  - export PATH="$HOME/.yarn/bin:$PATH"
+- openssl aes-256-cbc -K $encrypted_1079cbf250e1_key -iv $encrypted_1079cbf250e1_iv
+  -in deploy.enc -out deploy -d
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.19.0
+- export PATH="$HOME/.yarn/bin:$PATH"
 env:
-  - NODE_ENV=test
+- NODE_ENV=test
+- REMOTEAPPDIR=~/
 install:
-  - yarn install
+- yarn install
+before_script:
+- chmod 600 deploy && mv deploy ~/.ssh/idrsa
 script:
-  - yarn test
+- yarn test
+- yarn build
+deploy:
+- provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: develop

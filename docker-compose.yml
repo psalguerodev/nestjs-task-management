@@ -5,7 +5,6 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://developer:developer@postgres:5432/task_managmenent
       NODE_ENV: development
       JWT_SECRET: psalguerodev$$
       RDS_HOST: postgres
