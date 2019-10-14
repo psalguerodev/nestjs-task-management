@@ -1,5 +1,7 @@
 # Task Managmenet API
 
+[![Coverage Status](https://coveralls.io/repos/github/psalguerodev/nestjs-task-management/badge.svg?branch=master)](https://coveralls.io/github/psalguerodev/nestjs-task-management?branch=master)
+
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
