@@ -6,6 +6,7 @@ branches:
     - master
     - develop
     - /^release-.*$/
+    - /^feature.*$/
 cache:
   directories:
     - "node_modules"
