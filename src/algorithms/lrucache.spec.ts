@@ -24,7 +24,7 @@ describe('Lrucache Test', () => {
   it('should be crossmind of key [key_02]', () => {
     setDefaultData(lruCache);
     const result = lruCache.get('key2');
-    expect(result).toEqual('crossmind')
+    expect(result).toEqual('crossmind');
     expect(result).toHaveLength(9);
   });
 
@@ -46,7 +46,6 @@ describe('Lrucache Test', () => {
     expect(lruCache.get('key1')).toBeUndefined();
   });
 
-
 });
 
 const setDefaultData = (cache: Lrucache<string>): void => {
@@ -57,4 +56,4 @@ const setDefaultData = (cache: Lrucache<string>): void => {
   cache.set('key5', 'tutukansito');
   cache.set('key6', 'spider2019');
   cache.set('key7', 'crossorigin');
-}
+};

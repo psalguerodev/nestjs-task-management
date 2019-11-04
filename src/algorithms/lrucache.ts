@@ -3,7 +3,7 @@ export class Lrucache<T> {
   private values: Map<string, T> = new Map<string, T>();
   private static readonly MAX_DEFAULT_ENTRIES: number = 20;
 
-  constructor(private _capacity: number = Lrucache.MAX_DEFAULT_ENTRIES ) {}
+  constructor(private _capacity: number = Lrucache.MAX_DEFAULT_ENTRIES) { }
 
   get capacity(): number {
     return this._capacity;
@@ -34,6 +34,5 @@ export class Lrucache<T> {
 
     this.values.set(key, value);
   }
-
 
 }

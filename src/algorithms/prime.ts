@@ -23,7 +23,7 @@ export class Prime {
 
     const sqrt = Math.sqrt(possibleNumber) + 1;
 
-    for(let index = 3; index < sqrt; index++) {
+    for (let index = 3; index < sqrt; index++) {
       if (possibleNumber % index === 0) {
         return false;
       }

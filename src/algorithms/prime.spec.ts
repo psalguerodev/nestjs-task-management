@@ -6,7 +6,7 @@ describe('Prime Test', () => {
 
   beforeEach(() => {
     prime = new Prime();
-  })
+  });
 
   it('should be defined', () => {
     expect(prime).toBeDefined();

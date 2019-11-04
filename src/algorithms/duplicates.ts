@@ -5,7 +5,7 @@ export class Duplicates {
   }
 
   removeDuplicatesByForeach(...toRemove: string[]): string[] {
-    let unique = {};
+    const unique = {};
     toRemove.forEach((item) => {
       if (!unique[item]) {
         unique[item] = true;
