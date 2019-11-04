@@ -7,7 +7,7 @@ describe('Palindrome', () => {
     palindrome = new Palindrome();
   });
 
-  it('should be defined', () => {
+  it('should be defined  ', () => {
     expect(palindrome).toBeDefined();
   });
 

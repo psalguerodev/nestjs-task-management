@@ -1,4 +1,4 @@
-abstract class BasePalindrome {
+export abstract class BasePalindrome {
   protected reverse(text: string): string {
     if (!text) {
       return text;

@@ -1,3 +1,5 @@
+import { BasePalindrome } from "./palindrome.base";
+
 export class Palindrome extends BasePalindrome {
 
   isPalindromeByString(possibleString: string): boolean {
