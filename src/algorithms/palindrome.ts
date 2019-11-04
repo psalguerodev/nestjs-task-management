@@ -1,4 +1,4 @@
-import { BasePalindrome } from "./palindrome.base";
+import { BasePalindrome } from './palindrome.base';
 
 export class Palindrome extends BasePalindrome {
 
