@@ -23,4 +23,10 @@ describe('Duplicates', () => {
     expect(withOutDuplicatesNamesForeach).toEqual(['psalguero', 'crossmind', 'patrick', 'psalguerodev']);
     expect(withOutDuplicatesNames).toContain('psalguerodev');
   });
+
+  it('should be [1, 2, 3] from [1,2,1,1,3] array with duplicates ', () => {
+    expect(duplicates.removeDuplicatesOfArrayNumber(1, 2, 1, 1, 3)).toEqual([1,2,3]);
+  });
+
+
 });
