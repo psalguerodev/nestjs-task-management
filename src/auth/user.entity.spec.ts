@@ -1,7 +1,5 @@
-import { Test } from '@nestjs/testing';
-import { UserRepository } from './user.respository';
-import { User } from './user.entity';
 import * as bcrypt from 'bcryptjs';
+import { User } from './user.entity';
 
 describe('UserEntityTest', () => {
   let user: User;

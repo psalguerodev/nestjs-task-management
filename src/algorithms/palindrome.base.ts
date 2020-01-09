@@ -1,14 +1,14 @@
 export abstract class BasePalindrome {
-  protected reverse(text: string): string {
-    if (!text) {
-      return text;
-    }
 
-    return text.charAt(text.length - 1) + this.reverse(text.substring(0, text.length - 1));
+  protected reverse(text: string): string {
+    if (!text) return text;
+
+    return text.charAt(text.length - 1) +
+           this.reverse(text.substring(0, text.length - 1));
   }
 
   protected reverseBySplit(text: string): string {
-    if (!text) { return text; }
+    if (!text) return text;
 
     const textToArray = text.split('');
 
