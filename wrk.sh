@@ -1,0 +1,1 @@
+wrk -t12 -c400 -d30s http://localhost:3000/task -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBzYWxndWVyb2RldiIsImlhdCI6MTU3ODc4NTcxMywiZXhwIjoxNTc4Nzg5MzEzfQ.0PiVhewE68UtcM40XPZuuKX2i5W1P59CZOZf0wBwl-Y'

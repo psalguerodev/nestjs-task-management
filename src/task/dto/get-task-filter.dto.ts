@@ -5,11 +5,11 @@ import { ApiModelProperty } from '@nestjs/swagger';
 export class GetTaskFilterDto {
   @IsOptional()
   @IsIn([TaskStatus.DONE, TaskStatus.IN_PROGRESS, TaskStatus.OPEN])
-  @ApiModelProperty({ enum: ['OPEN', 'IN_PROGRESS', 'DONE']})
+  @ApiModelProperty({ enum: ['OPEN', 'IN_PROGRESS', 'DONE'], required: false })
   status: TaskStatus;
 
   @IsOptional()
   @IsNotEmpty()
-  @ApiModelProperty()
+  @ApiModelProperty({ required: false })
   search: string;
 }
