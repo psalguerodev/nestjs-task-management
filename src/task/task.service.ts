@@ -13,7 +13,7 @@ export class TaskService {
   constructor(
     @InjectRepository(TaskRepository)
     private readonly taskRepository: TaskRepository,
-    ) {}
+  ) { }
 
   getTasks(filterDto: GetTaskFilterDto, user: User) {
     return this.taskRepository.getTasks(filterDto, user);

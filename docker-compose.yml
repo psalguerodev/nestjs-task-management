@@ -1,7 +1,7 @@
 version: "3"
 services:
   app:
-    build: .
+    image: psalguero/nestjs-task-management:latest
     depends_on:
       - postgres
     environment:
@@ -16,11 +16,11 @@ services:
       TYPEORM_SYNC: 'true'
       PORT: 3000
     ports:
-      - "3000:3000"
+      - "9000:3000"
     command: yarn start
-    volumes:
-      - .:/task-managmenet-api/
-      - /task-managmenet-api/node_modules
+    # volumes:
+    #   - .:/task-managmenet-api/
+    #   - /task-managmenet-api/node_modules
 
   postgres:
     image: postgres:10.4
